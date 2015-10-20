@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html data-ng-app>
+<head>
+	<title>Using AngularJS Directives and Data Binding</title>
+</head>
+<body data-ng-init="guests=[{name:'Sakura', city:'Vancouver'}, {name:'Slice', city:'Houston'}, {name:'Sasha', city:'Hollywood'}]">
+	<input type="text" data-ng-model="name" />
+	
+	<ol>
+		<li data-ng-repeat="guest in guests">
+			{{ guest.name }}
+		</li>
+	</ol>
+	
+	<ol>
+		<li data-ng-repeat="guest in guests | filter:name | orderBy:'name'">
+			{{ guest.name }} - {{ guest.city }}
+		</li>
+	</ol>
+	
+	<script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js></script>
+</body>
+</html>
