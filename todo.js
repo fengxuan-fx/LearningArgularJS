@@ -15,10 +15,17 @@ todoApp.controller("TodoListController",function(){
 	todoList.remaining = function(){
 		var count = 0;
 
-		//something wrong there 
+		//something wrong there   " + = "
 		angular.forEach(todoList.todos , function(todo){
-			count + = todo.done ? 0 : 1;
+			//wrong way 
+			// count + = todo.done ? 0 : 1;
+			count += todo.done ? 0 : 1;
+			
 		});
 		return count;
 	};
+
+
+
+	  
 });
