@@ -12,7 +12,7 @@
 		<span>hello,{{todoList.test}}</span><br/>
 
 		<span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-		[<a href="" ng-click="archive()">archive</a>]
+		[<a href="" ng-click="todoList.archive()">archive</a>]
 
 		<ul class="unstyle">
 			<li ng-repeat = "todo in todoList.todos">
@@ -21,9 +21,9 @@
 			</li>
 			
 		</ul>
-		<form>
-			<input type="text" size="30" placeholder="add new todo here">
-			<input type="submit" class="btn-primary" value="add">
+		<form ng-submit="todoList.addTodo()">
+			<input type="text" size="30" placeholder="add new todo here" ng-model="todoList.todoText">
+			<input type="submit" class="btn-primary" value="add" >
 
 		</form>
 	</div>

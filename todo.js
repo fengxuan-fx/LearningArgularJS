@@ -25,6 +25,26 @@ todoApp.controller("TodoListController",function(){
 		return count;
 	};
 
+	//caution here ; push({.....})
+	todoList.addTodo = function(){
+		todoList.todos.push({text : todoList.todoText , done : false});
+		todoList.todoText = "";
+	};
+
+
+	//todoList.todos = [] ;  
+	//todoList.todos = "";  wrong
+	todoList.archive = function(){
+		var oldTodos = todoList.todos;
+		todoList.todos = [];
+		angular.forEach(oldTodos ,function(todo){
+			if(!todo.done) todoList.todos.push(todo);
+		});
+
+	};
+
+	
+
 
 
 	  
