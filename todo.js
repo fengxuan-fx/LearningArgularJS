@@ -12,7 +12,7 @@ todoApp.controller("TodoListController",function(){
 
 
 	//remaining
-	todoList.remaining = function(){
+	todoList.remaining =  function(){
 		var count = 0;
 
 		//something wrong there   " + = "
